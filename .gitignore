@@ -1,0 +1,6 @@
+**/.DS_Store
+create_cert.sh
+server.crt
+server.key
+logs/**
+!logs/.gitkeep

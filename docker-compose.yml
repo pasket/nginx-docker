@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  nginx:
+    restart: always
+    image: nginx:1.23.1
+    container_name: lk-nginx
+    hostname: lk-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./conf/cert:/etc/ssl/certs
+      - ./conf/nginx.conf:/etc/nginx/nginx.conf
+      - ./conf/default.conf:/etc/nginx/conf.d/default.conf
+      - ./logs:/var/log/nginx
